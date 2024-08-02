@@ -1,5 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useState } from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -17,7 +23,9 @@ export default function RegisterScreen({ navigation }) {
 
       <View style={styles.bottomView}>
         <Text style={styles.welcomeText}>Create your account</Text>
-        <Text style={styles.bodyText}>Welcome! 🎉 Registering unlocks a world of learning and growth.</Text>
+        <Text style={styles.bodyText}>
+          Welcome! 🎉 Registering unlocks a world of learning and growth.
+        </Text>
 
         <View style={styles.inputContainer}>
           <AntDesign name="user" color={"#FF6500"} size={25} />
@@ -25,33 +33,58 @@ export default function RegisterScreen({ navigation }) {
         </View>
 
         <View style={styles.inputContainer}>
-          <MaterialCommunityIcons name="email-outline" color={"#FF6500"} size={25} />
+          <MaterialCommunityIcons
+            name="email-outline"
+            color={"#FF6500"}
+            size={25}
+          />
           <TextInput placeholder="Email" style={styles.input} />
         </View>
 
         <View style={styles.inputContainer}>
           <AntDesign name="lock" color={"#FF6500"} size={25} />
-          <TextInput placeholder="Password" secureTextEntry style={[styles.input, { width: 220, marginRight: 5 }]} />
+          <TextInput
+            placeholder="Password"
+            secureTextEntry
+            style={[styles.input, { width: 220, marginRight: 5 }]}
+          />
           <TouchableOpacity style={styles.eyeIcon}>
             <AntDesign name="eye" color={"#FF6500"} size={25} />
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.buttons}>SIGN IN</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+          <Text style={styles.buttons}>REGISTER</Text>
         </TouchableOpacity>
 
         <View style={styles.checkboxContainer}>
-          <Checkbox style={styles.checkbox} value={isChecked} onValueChange={setChecked} />
-          <Text style={styles.checkboxLabel}>Keep Sign in</Text>
-          <TouchableOpacity>
-            <Text style={styles.forgotPassword}>Forgot Password?</Text>
+          <Checkbox
+            style={styles.checkbox}
+            value={isChecked}
+            onValueChange={setChecked}
+          />
+          <Text style={styles.checkboxLabel}>
+            By tapping "Sign Up" you accept our
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", marginLeft: 60 }}>
+          <TouchableOpacity
+          // style={{flexDirection:'row'}}
+          >
+            <Text style={styles.forgotPassword}>terms</Text>
+          </TouchableOpacity>
+          <Text style={{
+    fontSize: 15,}}>and</Text>
+          <TouchableOpacity style={{ flexDirection: "row" }}>
+            <Text style={styles.forgotPassword}>conditions.</Text>
           </TouchableOpacity>
         </View>
-
-        <Text style={styles.footerText}>Don't have an account?</Text>
-        <TouchableOpacity style={styles.createAccountButton} onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.createAccountText}>CREATE AN ACCOUNT</Text>
+        <Text style={styles.footerText}>Already have an account?</Text>
+        <TouchableOpacity
+          style={styles.createAccountButton}
+          onPress={() => navigation.navigate("Login")}
+        >
+          <Text style={styles.createAccountText}>SIGN IN</Text>
         </TouchableOpacity>
       </View>
 
@@ -142,17 +175,18 @@ const styles = StyleSheet.create({
   },
   checkboxLabel: {
     fontSize: 15,
-    fontWeight: "bold",
+    // fontWeight: "bold",
   },
   forgotPassword: {
-    fontWeight: "bold",
+    // fontWeight: "bold",
     color: "#FF6500",
     fontSize: 15,
-    marginHorizontal: 60,
+
+    marginHorizontal: 2,
   },
   footerText: {
     alignSelf: "center",
-    marginTop: 70,
+    marginTop: 60,
     fontSize: 15,
     color: "#5459",
   },
@@ -163,7 +197,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: "#f5f5f5",
     width: 300,
-    margin: 10,
+    
   },
   createAccountText: {
     fontSize: 15,

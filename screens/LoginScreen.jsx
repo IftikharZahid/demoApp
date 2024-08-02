@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { useState } from "react";
 import Checkbox from "expo-checkbox";
+// import design from "./design"
 
 export default function LoginScreen({navigation}) {
   // const myButton = (
@@ -98,7 +99,7 @@ export default function LoginScreen({navigation}) {
           </TouchableOpacity>
         </View>
         <TouchableOpacity>
-          <Text style={styles.buttons}> SIGN IN</Text>
+          <Text style={styles.button}> SIGN IN</Text>
         </TouchableOpacity>
 
         <View
@@ -130,7 +131,7 @@ export default function LoginScreen({navigation}) {
           style={{
             justifyContent: "flex-end",
             alignSelf: "center",
-            marginTop: 70,
+            marginTop: 85,
             fontSize: 15,
             color: "#5459",
           }}
@@ -205,7 +206,12 @@ const styles = StyleSheet.create({
     marginRight: 30,
     // padding: 20,
   },
-  buttons: {
+  
+  checkbox: {
+    color: "#FF6500",
+    marginHorizontal: 5,
+  },
+  button: {
     alignSelf: "center",
     padding: 15,
     borderRadius: 10,
@@ -217,9 +223,5 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 15,
     fontWeight: "bold",
-  },
-  checkbox: {
-    color: "#FF6500",
-    marginHorizontal: 5,
   },
 });
